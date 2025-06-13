@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edytuj transakcję</title>
+</head>
+<body>
+    <h1>Edytuj transakcję</h1>
+    <form method="POST">
+        Typ:
+        <select name="type">
+            <option value="income" {% if transaction.type == 'income' %}selected{% endif %}>Przychód</option>
+            <option value="expense" {% if transaction.type == 'expense' %}selected{% endif %}>Wydatek</option>
+        </select><br>
+        Kategoria: <input type="text" name="category" value="{{ transaction.category }}"><br>
+        Kwota: <input type="number" step="0.01" name="amount" value="{{ transaction.amount }}"><br>
+        Opis: <input type="text" name="description" value="{{ transaction.description }}"><br>
+        Dowód zakupu: <input type="text" name="receipt" value="{{ transaction.receipt }}"><br>
+        <button type="submit">Zapisz zmiany</button>
+    </form>
+</body>
+</html>

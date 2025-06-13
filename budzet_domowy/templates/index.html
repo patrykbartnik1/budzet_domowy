@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Budżet Domowy</title>
+</head>
+<body>
+    <h1>Lista Transakcji</h1>
+    <p>Saldo: {{ balance }} PLN</p>
+    <a href="/add">Dodaj transakcję</a> |
+    <a href="/chart">Pokaż wykres</a> |
+    <a href="/export/pdf">Eksportuj PDF</a> |
+    <a href="/export/csv">Eksportuj CSV</a> |
+    <a href="/logout">Wyloguj</a>
+    <ul>
+        {% for t in transactions %}
+            <li>
+                {{ t.type }} | {{ t.category }} | {{ t.amount }} PLN | {{ t.description }} | Dowód: {{ t.receipt }}
+                <a href="/edit/{{ t.id }}">Edytuj</a> |
+                <a href="/delete/{{ t.id }}">Usuń</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

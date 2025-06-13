@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dodaj transakcję</title>
+</head>
+<body>
+    <h1>Dodaj transakcję</h1>
+    <form method="POST">
+        Typ:
+        <select name="type">
+            <option value="income">Przychód</option>
+            <option value="expense">Wydatek</option>
+        </select><br>
+        Kategoria: <input type="text" name="category"><br>
+        Kwota: <input type="number" step="0.01" name="amount"><br>
+        Opis: <input type="text" name="description"><br>
+        Dowód zakupu: <input type="text" name="receipt"><br>
+        <button type="submit">Dodaj</button>
+    </form>
+</body>
+</html>
